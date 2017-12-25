@@ -1,1 +1,20 @@
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#splash {
+  /*background-image: url(../assets/images/veggies.png);*/
+  background-color: beige
+  background-size: cover;
+  color: rgb(70, 116, 1);
+  height: 100vh;
+  text-align: center;
+}
+
+#map {
+  height: 30vh;
+  width: 50vw;
+}
