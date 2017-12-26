@@ -45,57 +45,25 @@ $(document).ready(function(){
     {key : "SURCO"},
     {key : "CHORRILLOS"}
   ];
-  var bla;
-  var count=0;
-  //Sacando los distritos
-  /*for (var i = 0; i < districts.length; i++) {
-    eachDistrict = districts[i].key;
-    bla = bla + districts[i].key;
-  }
-  console.log(eachDistrict);
 
-  console.log(bla);*/
+  var $arr = Object.keys(data)
+  //$('h3').text($arr);
+  //$distrito.eq(2).;
+  console.log($arr[1]); //me muestra la posición de los distritos
+  console.log(districts.length);
+  
+  //Confirma que la dirección que se escojió funciona
+  $searchRestaurant.on('keyup', pickDistrict);
 
-  //ciclo para recorrer el contenido de distrito, mostrará los tipos de restaurantes
-  /*for (var i = 0; i < distrito.length; i++) {
-    llavecita = Object.keys(data[distrito[i].key]);
-    console.log(llavecita);
-  }*/
-
-
-  //Sacando data, sacando los distritos
-  var $districts = function  $(data){
-    var arrData = Object.keys(data);
-    return arrData;
+  //función que jala el distrito escojido
+  
+  function pickDistrict(){
+    for (var i = 0; i < districts.length; i++){
+      if($searchRestaurant.val().toUpperCase() === $arr[i]){
+        console.log($arr[i]);
+      };
+    };  
   };
-  $cosha = $districts(data)
-  console.log($districts(data)[0]);
-
-  //Otra opcion
-
-
-  //convirtiendo districts a Array
-  var $districtsArr = $.makeArray($districts(data));
-  console.log($.isArray($districtsArr)); //true
-  console.log($districtsArr["VENTANILLA"]); //typeof object¿?, length 37
-  //$( "h3" ).text($districts(data));
-  
-  //Buscando restaurantes que coincidan
-  $searchRestaurant.on('keyup', function(){
-    //debugger
-    for (var i = 0; i < $districtsArr.length; i++){
-      //console.log($districtsArr[i]);
-      if($searchRestaurant.val().toUpperCase() ===$districtsArr[i]){
-        console.log($districtsArr[i]);
-      }
-    }
-  });
-  
- // console.log($searchRestaurant);
-  
-  
-  
-
   
 
 });
