@@ -1,6 +1,6 @@
 var data = {
   'VENTANILLA': {
-      'Italian Food': {
+      'VItalian Food': {
         'photo':'http://www.foodiebytes.com/image/x160/t/chain_menu_item/aac1b947edbead2dd93e0f61e7837c1e.jpg',
         'opinion': 'good'
       },
@@ -26,7 +26,7 @@ var data = {
       }
   },
   'LA PUNTA': {
-      'Italian Food': {
+      'LItalian Food': {
         'photo':'http://www.foodiebytes.com/image/x160/t/chain_menu_item/aac1b947edbead2dd93e0f61e7837c1e.jpg',
         'opinion': 'good'
       },
@@ -52,7 +52,7 @@ var data = {
       }
   },
   'BELLAVISTA': {
-      'Italian Food': {
+      'BItalian Food': {
         'photo':'http://www.foodiebytes.com/image/x160/t/chain_menu_item/aac1b947edbead2dd93e0f61e7837c1e.jpg',
         'opinion': 'good'
       },
