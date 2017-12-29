@@ -18,3 +18,12 @@
   height: 30vh;
   width: 50vw;
 }
+
+.style-restaurant {
+  background: midnightblue;
+  color: white;
+  display: inline-block;  
+  height: 10vh;  
+  margin-bottom: 2rem;
+  width: 100%;
+}
