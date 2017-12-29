@@ -6,72 +6,27 @@ $(document).ready(function(){
   var $restaurantImages = $('div.restaurant-images');
 
   //creando array de objetos para representar data
-  var districts = [
-    {key : "VENTANILLA"},
-    {key : "LA PUNTA"},
-    {key : "BELLAVISTA"},
-    {key : "LA PERLA"},
-    {key : "SAN MARTIN DE PORRES"},
-    {key : "LOS OLIVOS"},
-    {key : "COMAS"},
-    {key : "CERCADO DE LIMA"},
-    {key : "BREÑA"},
-    {key : "RIMAC"},
-    {key : "EL AGUSTINO"},
-    {key : "SAN MIGUEL"},
-    {key : "PUEBLO LIBRE"},
-    {key : "JESUS MARIA"},
-    {key : "MAGDALENA"},
-    {key : "LINCE"},
-    {key : "LA VICTORIA"},
-    {key : "SAN ISIDRO"},
-    {key : "MIRAFLORES"},
-    {key : "SURQUILLO"},
-    {key : "BARRANCO"},
-    {key : "SAN BORJA"},
-    {key : "SURCO"},
-    {key : "CHORRILLOS"}
-  ];
 
   //Confirma que la dirección que se escojió funciona
   $searchRestaurant.on('keyup', pickDistrict);
 
-  //función que jala el distrito escojido
+  //función PickDistrict para que jale los distritos
   function pickDistrict(){
-    //debugger
-    for (var i = 0; i < districts.length; i++){
-      //debugger
-      var selectDistrict = districts[i].key;
-      //console.log(selectDistrict);
-      if($searchRestaurant.val().toUpperCase() === selectDistrict){
-        
-        //console.log(districts[i].key); //distrito elegido
-        //console.log(Object.keys(data[districts[i].key])); //jala los restaurantes filtrados por distrito
-        $('h3').text("Elegiste " + selectDistrict);
-        var infoRestaurant = data[districts[i].key]; 
+    //debugger 
+    $.each(data, function(key, value){
+      if($searchRestaurant.val().toUpperCase() === key){
+        $('h3').text(key);
+        var restaurantList = data[key]; 
+        console.log(restaurantList); //{Italian Food: {…}, Japanese Food: {…}, Vegetarian Food: {…}, Amazonian Food: {…}, Arabic Food: {…}, …}
+        console.log(Object.keys(restaurantList).length); //6
+        console.log(Object.keys(restaurantList)); //(6) ["Italian Food", "Japanese Food", "Vegetarian Food", "Amazonian Food", "Arabic Food", "Cake Shop"]
+        console.log(Object.values(restaurantList)); //(6) [{…}, {…}, {…}, {…}, {…}, {…}]
+        console.log(Object.values(restaurantList)[0]); //{photo: "http://www.foodiebytes.com/image/x160/t/chain_menu_item/aac1b947edbead2dd93e0f61e7837c1e.jpg", opinion: "good"}
+        for(var i = 0; i < Object.keys(restaurantList).length; i++){
+
+          $restaurantImages.addClass('style-restaurant').eq(i).text(Object.keys(restaurantList)[i]);
+        }
       };
-    };  
-  };
-
-  $searchRestaurant.on('keyup', function(){
-  var valor = data[$searchRestaurant.val().toUpperCase()];
-  //debugger
-    for(var j = 0; j < Object.keys(valor).length; j++){
-      console.log(Object.keys(valor)[j]);
-      $restaurantImages.addClass('style-restaurant').eq(j).text(Object.keys(valor)[j]);
-    };
-  });
-  
-
-  
-/*
-  console.log($restaurantImages);
-  var $arrButton = $.makeArray($restaurantImages);
-  console.log($.isArray($arrButton)); 
-  console.log($arrButton); 
-  $.each($arrButton, function(i, val) {
-    $restaurantImages.eq(i).text("hola")
-  });
-*/
-
+    });
+  };  
 });
