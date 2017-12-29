@@ -20,8 +20,8 @@
 }
 
 .style-restaurant {
-  background: midnightblue;
-  color: white;
+  border: 1px solid midnightblue;
+  color: rgb(109, 14, 14);
   display: inline-block;  
   height: 10vh;  
   margin-bottom: 2rem;
