@@ -5,6 +5,9 @@
   margin: 0;
 }
 
+p {
+  text-align: center;
+}
 /* INDEX OR SPLASH */
 
 #splash {
@@ -34,6 +37,10 @@
 /* end index or splash */
 
 /* PLATFORM */
+.header-info p {
+  font-size: 1rem;
+}
+
 #platform h2 {
   border-bottom: 2px dotted green;
   color: #1d2b8b;
@@ -59,12 +66,19 @@ h3 {
   background-color: #6abc6a;
   border-radius: 1rem;
   color: #fff;
-  display: inline-block;  
+  /* display: inline-block;   */
+  font-size: 1.3rem;
   height: 10vh;  
   margin-bottom: 2rem;
-  padding: 1em;
+  padding: 0.2rem 0.3rem;
   text-align: center;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.style-restaurant p {
+  font-size: 1.2rem;
+}
 /* end Platform */

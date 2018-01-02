@@ -4,6 +4,8 @@ $(document).ready(function(){
   var $map = $('#map');
   var $searchRestaurant = $('#search-restaurant');
   var $restaurantImages = $('div.restaurant-images');
+  var $restaurantImages = $('div.restaurant-images');
+  var $restaurantImagesParagraph = $('div.restaurant-images p');
   var $modalInfoRestaurant = $('#modal-info-restaurant p');
   console.log($modalInfoRestaurant);
 
@@ -25,8 +27,9 @@ $(document).ready(function(){
         console.log(Object.values(restaurantList)); //(6) [{…}, {…}, {…}, {…}, {…}, {…}]
         console.log(Object.values(restaurantList)[0]); //{photo: "http://www.foodiebytes.com/image/x160/t/chain_menu_item/aac1b947edbead2dd93e0f61e7837c1e.jpg", opinion: "good"}
         for(var i = 0; i < Object.keys(restaurantList).length; i++){
-          $restaurantImages.addClass('style-restaurant').eq(i).text(Object.keys(restaurantList)[i]).attr({'data-target': '.show-info-restaurant', 'data-toggle':"modal"});
+          $restaurantImages.addClass('style-restaurant').attr({'data-target': '.show-info-restaurant', 'data-toggle':"modal"});
           console.log(Object.values(restaurantList)[i]['photo']); //http://www.foodiebytes.com/image/x160/t/chain_menu_item/aac1b947edbead2dd93e0f61e7837c1e.jpg
+          $restaurantImagesParagraph.eq(i).text(Object.keys(restaurantList)[i]);
           $modalInfoRestaurant.text('Customers opinion : It\'s ' + Object.values(restaurantList)[i].opinion);
         }
       };
