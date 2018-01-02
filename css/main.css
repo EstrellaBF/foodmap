@@ -5,25 +5,66 @@
   margin: 0;
 }
 
+/* INDEX OR SPLASH */
+
 #splash {
-  /*background-image: url(../assets/images/veggies.png);*/
-  background-color: beige
+  background-image: url(../assets/images/food-map.jpg);
+  background-color: beige;
   background-size: cover;
   color: rgb(70, 116, 1);
   height: 100vh;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#splash h1{
+  color: white;
+  font-size: 7rem;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 0.4rem 0.3rem #5e1c1c;;
+}
+
+#splash h1:hoover {
+  color: #fff;
+  background-color: yellow;
+}
+
+/* end index or splash */
+
+/* PLATFORM */
+#platform h2 {
+  border-bottom: 2px dotted green;
+  color: #1d2b8b;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: center;
+  /* text-shadow: 0.4rem 0.3rem #5e1c1c; */
 }
 
 #map {
-  height: 30vh;
+  height: 20vh;
+  margin: 0 auto;
   width: 50vw;
 }
 
+h3 {
+  font-family: 'Shadows Into Light Two', cursive;
+  letter-spacing: 0.2rem;
+}
+
 .style-restaurant {
-  border: 1px solid midnightblue;
-  color: rgb(109, 14, 14);
+  background-color: #6abc6a;
+  border-radius: 1rem;
+  color: #fff;
   display: inline-block;  
   height: 10vh;  
   margin-bottom: 2rem;
+  padding: 1em;
+  text-align: center;
   width: 100%;
 }
+
+/* end Platform */
