@@ -1,13 +1,27 @@
+#map {
+  height: 400px;
+  width: 100%;
+}
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+*,
+*:before,
+*:after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nickname DEMO';
 }
 
-p {
-  text-align: center;
+html,
+body {
+  height: 100vh;
 }
+
+body {
+  /* background: #eee; */
+  /* font-family: 'Lato', sans-serif; */
+}
+
 /* INDEX OR SPLASH */
 
 #splash {
@@ -24,9 +38,12 @@ p {
 
 #splash h1{
   color: white;
+  font-weight: 600;
   font-size: 7rem;
-  font-family: 'Dancing Script', cursive;
-  text-shadow: 0.4rem 0.3rem #5e1c1c;;
+  /* font-family: 'Dancing Script', cursive; */
+  /* text-shadow: 0.4rem 0.3rem #5e1c1c; */
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 1px #4b4949;
 }
 
 #splash h1:hoover {
@@ -36,49 +53,108 @@ p {
 
 /* end index or splash */
 
-/* PLATFORM */
-.header-info p {
-  font-size: 1rem;
-}
-
-#platform h2 {
-  border-bottom: 2px dotted green;
-  color: #1d2b8b;
-  font-family: 'Dancing Script', cursive;
-  font-weight: bold;
-  font-size: 5rem;
-  text-align: center;
-  /* text-shadow: 0.4rem 0.3rem #5e1c1c; */
-}
-
-#map {
-  height: 20vh;
-  margin: 0 auto;
-  width: 50vw;
-}
-
 h3 {
-  font-family: 'Shadows Into Light Two', cursive;
-  letter-spacing: 0.2rem;
+  padding: 50px 0;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.style-restaurant {
-  background-color: #6abc6a;
-  border-radius: 1rem;
-  color: #fff;
-  /* display: inline-block;   */
-  font-size: 1.3rem;
-  height: 10vh;  
-  margin-bottom: 2rem;
-  padding: 0.2rem 0.3rem;
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.header-info {
+  margin: 1em 0;
   text-align: center;
+  font-size: 2rem;
+}
+
+.header-info h2{
+  font-size: 5rem;
+}
+
+button#mark-route {
+  color: #0abde3;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+section {
+  border: 1px solid #ddd;
+  padding: 15px 25px;
+}
+
+.location {
+  background-color: #0abde3;
+  padding: 20px;
+  color: white;
+}
+
+input[type=text] {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 3px;
+  outline: none;
+  background-color: #0abde3;
+  border: 1px solid white;
+  color: white;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type=text]::placeholder {
+  color: #d8d8d8;
+}
+ 
+input {
   width: 100%;
+  border: 1px solid #999;
+  background: #fff;
+  padding: 10px;
+}
+
+.content-input {
+  background-color: white;
+}
+
+.btn {
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.center {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.style-restaurant p {
-  font-size: 1.2rem;
+.icon {
+  margin-right: 15px;
 }
-/* end Platform */
+
+.location > div {
+  margin-bottom: 14px;
+}

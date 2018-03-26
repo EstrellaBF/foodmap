@@ -1,116 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Shadows+Into+Light+Two" rel="stylesheet">
-    <title>FoodMap</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/fonts/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Shadows+Into+Light+Two" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>FoodMap</title>
 </head>
+
 <body>
-  <header id="platform">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="header-info">
-            <h2>FoodMap</h2>
-            <p>Available for now in Ventanilla, La Punta, Bellavista, San Martín de Porres, Los Olivos, Cercado de Lima, Breña, 
-              San Miguel, Jesús María, Lince, San Isidro, Miraflores, Barranco, San Borja, Chorrillos.</p>
-          </div>
-        </div> 
-      </div>
-      <!--map-->
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="map"></div>
-        </div>
-      </div>
-      <!--info-->
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Find restaurants near to you</h3>
-        </div>
-      </div>
-      <!--Form-->
-      <div class="row">
-        <div class="col-xs-12">
-          <form class="form-inline">
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="search-restaurant" placeholder="Search...">
-                <div class="input-group-addon">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </form>
-          <!-- Small modal -->
-          <div class="modal fade show-info-restaurant" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
-                <div class="modal-body" id="modal-info-restaurant">
-                  <p></p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End small modal -->
-        </div>
-      </div>
-    </div> 
-  </header>
-  <section>
-    <div class="container-fluid">
-      <!--container div from restaurant's information first row-->
-      <div class="row">
-        <div class="col-xs-4">
-          <div class="restaurant-images">
-            <p></p>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="restaurant-images">
-            <p></p>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="restaurant-images">
-            <p></p>
-          </div>
-        </div>
-      </div>
-      <!--container div from restaurant's information second row-->
-      <div class="row">
-        <div class="col-xs-4">
-          <div class="restaurant-images">
-            <p></p>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="restaurant-images">
-            <p></p>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="restaurant-images">
-            <p></p>
-          </div>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="header-info">
+          <h2>FoodMap</h2>
         </div>
       </div>
     </div>
-  </section>
-  <script src="../vendors/js/jquery.js"></script>
-  <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../js/maps.js"></script>
-  <script src="../js/app.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&callback=initMap"></script>
-  <script src="../js/data.js"></script>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="location flex">
+          <div class="center">
+            <img src="../assets/icon/shape.png" alt="" class="icon">
+            <input type="text" placeholder="Ingrese su ubicación" id="start-location">
+
+          </div>
+          <div class="center">
+            <img src="../assets/icon/shape2.png" alt="" class="icon">
+            <input type="text" placeholder="Ingrese su destino" id="end-location">
+          </div>
+          <div>
+            <button id="mark-route" class="btn">Trazar ruta</button>
+            <!-- <span>|</span>
+                <button id="mark-route" class="btn">Encuéntrame</button> -->
+          </div>
+
+        </div>
+
+        <div id="map"></div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- API google -->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&callback=initMap"></script> -->
+  <!-- API google places -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=autocompletePlaces"
+    async defer></script> -->
+  <!-- SEGUN API PLACES -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=initMap"
+    async defer></script>
+  <script src="../js/map.js"></script>
 </body>
+
 </html>
