@@ -6,8 +6,6 @@ Webapp que filtra restaurantes cercanos a la zona donde estés o donde desees bu
 ## Desarrollado para
 [Laboratoria](http://laboratoria.la)
 
-## Introduccion  
-> Crear una webapp que pueda filtrar un listado de restaurantes según el distrito que se elija. Además que tenga una vista splash inicial.
 
 ## Flujograma
 
