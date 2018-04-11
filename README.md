@@ -1,4 +1,10 @@
 # FOODMAP
+Webapp que filtra restaurantes cercanos a la zona donde estés o donde desees buscar. Usa el API de Google Maps
+
+![principal](assets/images/food-map.png)
+
+## Desarrollado para
+[Laboratoria](http://laboratoria.la)
 
 ## Introduccion  
 > Crear una webapp que pueda filtrar un listado de restaurantes según el distrito que se elija. Además que tenga una vista splash inicial.
