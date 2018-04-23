@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,23 +13,68 @@
   <link rel="stylesheet" href="css/main.css">
   <title>FoodMap</title>
 </head>
+
 <body>
-  <!--Splash view-->
-  <header id='splash'>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="splash">
-            <h1>Foodmap</h1>
-          </div>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="header-info">
+          <h2>FoodMap</h2>
         </div>
       </div>
     </div>
-  </header>
-  <!--End splash view-->
-  <script src="vendors/js/jquery.js"></script>
-  <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/intro.js"></script>
+    <div class="row">
+      <div class="col-xs-12">
+
+
+
+
+          <div id="map"></div>
+          <div id="keywordField">
+              <input id="keyword" type="text" value="mexican" />
+          </div>
+          <div id="controls"> <span id="typeLabel">Type: </span>
+          
+              <select id="type">
+                  <option value="bar">Bars</option>
+                  <option value="cafe">Cafe</option>
+                  <option value="clothing_store">Clothing store</option>
+                  <option value="museum">Museums</option>
+                  <option value="restaurant" selected="selected">Restaurants</option>
+                  <option value="university">University</option>
+              </select> <span id="rankByLabel">
+                Rank by:
+              </span>
+          
+              <select id="rankBy">
+                  <option value="prominence">Prominence</option>
+                  <option value="distance" selected="selected">Distance</option>
+              </select>
+          </div>
+          <div id="listing">
+              <table id="resultsTable">
+                  <tbody id="results"></tbody>
+              </table>
+          </div>
+
+
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- API google -->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&callback=initMap"></script> -->
+  <!-- API google places -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=autocompletePlaces"
+    async defer></script> -->
+  <!-- SEGUN API PLACES -->
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=initialize&sensor=false&libraries=places,geometry" async defer></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
