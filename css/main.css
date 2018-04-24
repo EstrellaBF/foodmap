@@ -170,11 +170,11 @@ input {
 }
 
 #type>option:hover {
-  background-color: yellowgreen;
+  background-color: purple;
 }
 
 #type>option:active {
-  background-color: yellowgreen;
+  background-color: red;
 }
 
 #type option:hover {
@@ -182,7 +182,7 @@ input {
 }
 
 #type option:active {
-  background-color: yellowgreen;
+  background-color: yellow;
 }
 
 #type-label, #type {
