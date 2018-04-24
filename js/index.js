@@ -1,41 +1,3 @@
-function initMap() {
-
-  let localization = (position) => {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-
-    var coords = { lat: latitude, lng: longitude };
-    var mapOptions = {
-      zoom: 16,
-      center: coords
-    }
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    var places = new google.maps.places.PlacesService(map);
-    google.maps.event.addListener(map, 'tilesloaded', tilesLoaded);
-
-    document.getElementById('keyword').onkeyup = function (e) {
-      if (!e) var e = window.event;
-      if (e.keyCode != 13) return;
-      document.getElementById('keyword').blur();
-      console.log(this);
-      search(document.getElementById('keyword').value);
-    }
-
-    var typeSelect = document.getElementById('type');
-    typeSelect.onchange = function () {
-      search();
-    };
-
-    // var marker = new google.maps.Marker({
-    //   position: coords,
-    //   map: map
-    // });
-  };
-
-  navigator.geolocation.getCurrentPosition(localization);
-};
-
-
 var map, places, iw;
 var markers = [];
 var searchTimeout;
@@ -43,6 +5,12 @@ var centerMarker;
 var autocomplete;
 var hostnameRegexp = new RegExp('^https?://.+?/');
 var myLatlng;
+
+
+document.getElementById('results').style.display = 'none';
+document.getElementById('rankByLabel').style.display = 'none';
+document.getElementById('rankBy').style.display = 'none';
+
 
 function initialize() {
   let localization = (position) => {
@@ -55,6 +23,7 @@ function initialize() {
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+
     map = new google.maps.Map(document.getElementById('map'), myOptions);
     places = new google.maps.places.PlacesService(map);
     google.maps.event.addListener(map, 'tilesloaded', tilesLoaded);
@@ -128,7 +97,9 @@ function reallyDoSearch() {
     centerMarker = new google.maps.Marker({
       position: search.location,
       animation: google.maps.Animation.DROP,
-      map: map
+      map: map,
+      title: 'bicycle marker',
+      icon: 'assets/icon/house.png',
     });
   } else {
     search.bounds = map.getBounds();

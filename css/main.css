@@ -106,7 +106,7 @@ input[type=text] {
   border: 1px solid white;
   color: white;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 1.8rem;
 }
 
 input[type=text]::placeholder {
@@ -157,4 +157,34 @@ input {
 
 .location > div {
   margin-bottom: 14px;
+}
+
+#type {
+  background-color: transparent;
+  border: none;
+  margin-left: 0.5em;
+}
+
+#type option {
+  color: black;
+}
+
+#type>option:hover {
+  background-color: yellowgreen;
+}
+
+#type>option:active {
+  background-color: yellowgreen;
+}
+
+#type option:hover {
+  background-color: red;
+}
+
+#type option:active {
+  background-color: yellowgreen;
+}
+
+#type-label, #type {
+  font-size: 1.8rem;
 }
