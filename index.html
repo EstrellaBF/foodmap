@@ -25,46 +25,37 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-          <div class="location flex">
-
-              <div class="center" id="keywordField">
-                  <span id="type-label"> </span>
-                <input id="keyword" type="text" value="" placeholder="Search" />
-              </div>
-              <div class="center" id="controls">
-                <span id="type-label">Type: </span>
-      
-                <select id="type">
-                  <option value="bar">Bars</option>
-                  <option value="cafe">Cafe</option>
-      
-                  <option value="bakery">Bakery</option>
-                  <option value="restaurant" selected="selected">Restaurants</option>
-                </select>
-                <span id="rankByLabel">
-                  Rank by:
-                </span>
-      
-                <select id="rankBy">
-                  <option value="prominence">Prominence</option>
-                  <option value="distance" selected="selected">Distance</option>
-                </select>
-              </div>
-              <div id="listing">
-                <table id="resultsTable">
-                  <tbody id="results"></tbody>
-                </table>
-              </div>
-
-
+        <div class="location flex">
+          <div class="center" id="keywordField">
+            <span id="type-label"> </span>
+            <input id="keyword" type="text" value="" placeholder="Search" />
           </div>
+          <div class="center" id="controls">
+            <span id="type-label">Search : </span>
 
+            <select id="type">
+              <option value="bar">Bars</option>
+              <option value="cafe">Cafe</option>
 
-          <div id="map"></div>
+              <option value="bakery">Bakery</option>
+              <option value="restaurant" selected="selected">Restaurants</option>
+            </select>
+            <span id="rankByLabel">
+              Rank by:
+            </span>
 
-
-
-
+            <select id="rankBy">
+              <option value="prominence">Prominence</option>
+              <option value="distance" selected="selected">Distance</option>
+            </select>
+          </div>
+          <div id="listing">
+            <table id="resultsTable">
+              <tbody id="results"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="map"></div>
       </div>
     </div>
 
@@ -79,7 +70,7 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=autocompletePlaces"
     async defer></script> -->
   <!-- SEGUN API PLACES -->
-  <script src="https://maps.google.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=initialize&sensor=false&libraries=places,geometry"
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyDlSJFm0Ud-vniNBk71be5AXJ_I5t3w9zU&libraries=places&callback=initialize&libraries=places,geometry"
     async defer></script>
   <script src="js/index.js"></script>
 </body>

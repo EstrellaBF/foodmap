@@ -18,7 +18,7 @@ body {
 }
 
 body {
-  background: #dbdada;
+  background: #eeeeeebd;
   /* font-family: 'Lato', sans-serif; */
 }
 
@@ -167,23 +167,14 @@ input {
 
 #type option {
   color: black;
+  box-shadow: none;
 }
 
-#type>option:hover {
-  background-color: purple;
+
+#type:focus{
+  outline: none;
 }
 
-#type>option:active {
-  background-color: red;
-}
-
-#type option:hover {
-  background-color: red;
-}
-
-#type option:active {
-  background-color: yellow;
-}
 
 #type-label, #type {
   font-size: 1.8rem;

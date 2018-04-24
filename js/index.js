@@ -10,6 +10,7 @@ var myLatlng;
 document.getElementById('results').style.display = 'none';
 document.getElementById('rankByLabel').style.display = 'none';
 document.getElementById('rankBy').style.display = 'none';
+document.getElementById('keywordField').style.display = 'none';
 
 
 function initialize() {
@@ -28,6 +29,48 @@ function initialize() {
     places = new google.maps.places.PlacesService(map);
     google.maps.event.addListener(map, 'tilesloaded', tilesLoaded);
 
+    // autocompleted
+    let geocoder = new google.maps.Geocoder;
+    let infowindow = new google.maps.InfoWindow;
+    geocodeLatLng(geocoder, map, infowindow);
+
+    
+    function geocodeLatLng(geocoder, map, infowindow) {
+      geocoder.geocode({
+        'location': myLatlng
+      }, function (results, status) {
+        if (status === 'OK') {
+          if (results[0]) {
+            map.setZoom(15);
+            // let marker = new google.maps.Marker({
+            //   position: myLatlng,
+            //   map: map
+            // });
+            startLocation.value = results[0].formatted_address;
+            // infowindow.setContent(`<div id='info_window'><span id='geocodedAddress'>${results[0].formatted_address}</span></div>`);
+            // console.log(infowindow.setContent);
+            // console.log(startLocation.value);
+            // startLocation.value = "";
+            // infowindow.open(map, marker);
+          } else {
+            window.alert('No results found');
+          }
+        } else {
+          window.alert('Geocoder failed due to: ' + status);
+        }
+      });
+    }
+
+    // startLocation.value = "";
+    // Autocompletado
+    let startLocation = document.getElementById('keyword');
+    // let endLocation = document.getElementById('end-location');
+    new google.maps.places.Autocomplete(startLocation);
+    // new google.maps.places.Autocomplete(endLocation);
+
+
+    // autocompleted
+
     document.getElementById('keyword').onkeyup = function (e) {
       if (!e) var e = window.event;
       if (e.keyCode != 13) return;
@@ -44,13 +87,8 @@ function initialize() {
     rankBySelect.onchange = function () {
       search();
     };
-
   };
-
   navigator.geolocation.getCurrentPosition(localization);
-
-
-
 }
 
 function tilesLoaded() {
@@ -111,7 +149,7 @@ function reallyDoSearch() {
 
         var distance = Math.round(google.maps.geometry.spherical.computeDistanceBetween(myLatlng, results[i].geometry.location));
 
-        console.log(distance, results[i]);
+        // console.log(distance, results[i]);
 
         markers.push(new google.maps.Marker({
           position: results[i].geometry.location,
