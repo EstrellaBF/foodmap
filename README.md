@@ -7,6 +7,8 @@ Webapp que filtra restaurantes cercanos a la zona donde estés o donde desees bu
 ## Desarrollado para
 [Laboratoria](http://laboratoria.la)
 
+**Actualización 5/05/2018**
+La plataforma no se puede disfrutar al 100% debido a límites en la cuenta de google platform.
 
 ## Flujograma
 
